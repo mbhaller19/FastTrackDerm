@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Fast Track Dermatology</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --offwhite:   #F5F2EC;
+      --cream:      #EDE9DF;
+      --sage:       #7E9178;
+      --sage-light: #A8B8A2;
+      --sage-dark:  #4E6349;
+      --gold:       #B8923A;
+      --gold-light: #D4AE6A;
+      --gold-pale:  #F0E8D6;
+      --text-dark:  #2A2A25;
+      --text-mid:   #5A574F;
+      --shadow-sm:  0 2px 12px rgba(42,42,37,0.07);
+      --shadow-md:  0 8px 32px rgba(42,42,37,0.10);
+    }
+
+    body {
+      background: var(--offwhite);
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+    }
+
+    /* ── SECTION INTRO ── */
+    .section-intro {
+      text-align: center;
+      padding: 80px 48px 64px;
+      background: var(--offwhite);
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .section-eyebrow::before,
+    .section-eyebrow::after {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--sage-light);
+    }
+
+    .section-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 4vw, 54px);
+      font-weight: 300;
+      color: var(--text-dark);
+      line-height: 1.1;
+    }
+
+    .section-heading em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    /* ── ABOUT GRID ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 0;
+      background: var(--cream);
+      border-top: 1px solid rgba(90,87,79,0.1);
+      border-bottom: 1px solid rgba(90,87,79,0.1);
+    }
+
+    /* ── PHOTO PANEL ── */
+    .about-photo {
+      position: relative;
+      background: var(--sage-dark);
+      min-height: 560px;
+      overflow: hidden;
+    }
+
+    .about-photo-inner {
+      width: 100%;
+      height: 100%;
+      min-height: 560px;
+      background: linear-gradient(170deg, #7E9178 0%, #4E6349 50%, #3A4E36 100%);
+      display: flex;
+      align-items: flex-end;
+      padding: 36px;
+      position: relative;
+    }
+
+    /* decorative circle */
+    .about-photo-inner::before {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      left: -60px;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .about-photo-inner::after {
+      content: '';
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .photo-caption {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 12px;
+      font-style: italic;
+      color: rgba(245,242,236,0.4);
+      letter-spacing: 0.06em;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ── CERT BADGE ── */
+    .cert-badge {
+      position: absolute;
+      top: 36px;
+      left: 36px;
+      background: var(--offwhite);
+      padding: 14px 18px;
+      box-shadow: var(--shadow-md);
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cert-badge-seal {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1.5px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .cert-badge-seal-inner {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 1px solid var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cert-badge-initials {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 9px;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    .cert-badge-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cert-badge-title {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+
+    .cert-badge-sub {
+      font-size: 10px;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-top: 2px;
+    }
+
+    /* ── BIO PANEL ── */
+    .about-bio {
+      padding: 64px 64px 64px 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(38px, 4vw, 54px);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+
+    .about-title {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-weight: 500;
+      margin-bottom: 28px;
+    }
+
+    .about-statement {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--text-mid);
+      border-left: 2px solid var(--gold-light);
+      padding-left: 20px;
+      margin-bottom: 40px;
+    }
+
+    .about-text {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 48px;
+      max-width: 520px;
+    }
+
+    /* ── CREDENTIALS ── */
+    .credentials-label {
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .credentials-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 40px;
+    }
+
+    .credential-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0 20px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(90,87,79,0.1);
+      align-items: start;
+    }
+
+    .credential-item:first-child {
+      border-top: 1px solid rgba(90,87,79,0.1);
+    }
+
+    .credential-year {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1.2;
+      padding-top: 1px;
+    }
+
+    .credential-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .credential-role {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-dark);
+      letter-spacing: 0.01em;
+    }
+
+    .credential-place {
+      font-size: 12px;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+
+    /* ── CALIFORNIA NOTICE ── */
+    .ca-notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--gold-pale);
+      padding: 18px 20px;
+      border-left: 3px solid var(--gold);
+    }
+
+    .ca-notice-icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .ca-notice-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .ca-notice-text {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-dark);
+      font-weight: 300;
+    }
+
+    .ca-notice-text strong {
+      font-weight: 500;
+    }
+
+    /* ── PRICING SECTION ── */
+    .pricing-section {
+      padding: 80px 64px;
+      background: var(--offwhite);
+    }
+
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .pricing-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 3.5vw, 46px);
+      font-weight: 300;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+
+    .pricing-sub {
+      font-size: 14px;
+      color: var(--text-mid);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .pricing-sub em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1px;
+      background: var(--cream);
+      border: 1px solid var(--cream);
+      max-width: 960px;
+      margin: 0 auto 40px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .pricing-card {
+      background: var(--offwhite);
+      padding: 32px 28px;
+      transition: background 0.2s;
+    }
+
+    .pricing-card:hover {
+      background: #FDFBF7;
+    }
+
+    .pricing-condition {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+      letter-spacing: 0.01em;
+    }
+
+    .pricing-detail {
+      font-size: 11px;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .pricing-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .pricing-price-note {
+      font-size: 11px;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-top: 4px;
+    }
+
+    .pricing-notice {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .pricing-notice-item {
+      flex: 1;
+      min-width: 260px;
+      background: var(--cream);
+      padding: 20px 24px;
+      border-left: 2px solid var(--sage-light);
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+
+    .pricing-notice-item strong {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-photo { min-height: 300px; }
+      .about-photo-inner { min-height: 300px; }
+
+      .about-bio {
+        padding: 48px 28px;
+      }
+
+      .pricing-section {
+        padding: 56px 24px;
+      }
+    }
+
+    /* ── SITE NAV ── */
+    .site-nav {
+      background: #F5F2EC;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 52px;
+      border-bottom: 1px solid #EDE9DF;
+      box-shadow: 0 2px 12px rgba(42,42,37,0.07);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: #2A2A25;
+      text-decoration: none;
+    }
+    .site-nav-logo span { color: #B8923A; }
+    .site-nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    .site-nav-links a {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #5A574F;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+    .site-nav-links a:hover { color: #B8923A; }
+    .site-nav-right { display: flex; align-items: center; gap: 16px; }
+    .site-nav-portal {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #5A574F;
+      text-decoration: none;
+      font-weight: 400;
+    }
+    .site-nav-cta {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: #B8923A;
+      color: #F5F2EC;
+      padding: 11px 24px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .site-nav-cta:hover { background: #D4AE6A; }
+    @media (max-width: 768px) {
+      .site-nav { padding: 16px 24px; }
+      .site-nav-links, .site-nav-portal { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="index.html" class="site-nav-logo">Fast Track <span>Dermatology</span></a>
+    <ul class="site-nav-links">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="site-nav-right">
+      <a href="patient-login.html" class="site-nav-portal">Patient Portal</a>
+      <!-- ↓ UPDATE: replace # with your CharmHealth booking URL -->
+      <a href="#" class="site-nav-cta">Book a Visit</a>
+    </div>
+  </nav>
+
+  <!-- SECTION INTRO -->
+  <div class="section-intro">
+    <div class="section-eyebrow">Meet Your Provider</div>
+    <h2 class="section-heading">
+      Care built on <em>expertise,</em><br>delivered with intention.
+    </h2>
+  </div>
+
+  <!-- ABOUT GRID -->
+  <div class="about-grid">
+
+    <!-- PHOTO PANEL -->
+    <div class="about-photo">
+      <div class="about-photo-inner">
+        <span class="photo-caption">Replace with your photo</span>
+      </div>
+
+      <!-- Board certification badge -->
+      <div class="cert-badge">
+        <div class="cert-badge-seal">
+          <div class="cert-badge-seal-inner">
+            <div class="cert-badge-initials">ABD</div>
+          </div>
+        </div>
+        <div class="cert-badge-text">
+          <span class="cert-badge-title">Board Certified</span>
+          <span class="cert-badge-sub">American Board of Dermatology</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BIO PANEL -->
+    <div class="about-bio">
+      <h2 class="about-name">Courtney Haller, MD</h2>
+      <p class="about-title">Board-Certified Dermatologist &middot; Founder</p>
+
+      <p class="about-statement">
+        "I started Fast Track because patients deserve timely, expert skin care without the months-long wait."
+      </p>
+
+      <p class="about-text">
+        Dr. Haller is a board-certified dermatologist with clinical training from some of the country's leading institutions. She founded Fast Track Dermatology MD, Medical Corporation to make high-quality dermatologic care more accessible through virtual visits for patients across California.
+      </p>
+
+      <p class="credentials-label">Training &amp; Education</p>
+      <div class="credentials-list">
+        <div class="credential-item">
+          <div class="credential-year">2025</div>
+          <div class="credential-detail">
+            <span class="credential-role">Dermatology Residency</span>
+            <span class="credential-place">Dell Medical School &mdash; University of Texas at Austin</span>
+          </div>
+        </div>
+        <div class="credential-item">
+          <div class="credential-year">2021</div>
+          <div class="credential-detail">
+            <span class="credential-role">Internship &mdash; Transitional Year</span>
+            <span class="credential-place">Blake Medical Center, University of South Florida</span>
+          </div>
+        </div>
+        <div class="credential-item">
+          <div class="credential-year">2019</div>
+          <div class="credential-detail">
+            <span class="credential-role">Medical School</span>
+            <span class="credential-place">University of Queensland &middot; Ochsner Clinical School, New Orleans, LA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ca-notice">
+        <div class="ca-notice-icon">
+          <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="9" cy="9" r="8" stroke="#B8923A" stroke-width="1.2"/>
+            <path d="M9 5v4.5" stroke="#B8923A" stroke-width="1.4" stroke-linecap="round"/>
+            <circle cx="9" cy="13" r="0.8" fill="#B8923A"/>
+          </svg>
+        </div>
+        <p class="ca-notice-text">
+          <strong>Currently licensed in California only.</strong> Fast Track Dermatology sees patients residing in California. Telehealth visits are conducted via secure video.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PRICING SECTION -->
+  <div class="pricing-section">
+    <div class="pricing-header">
+      <h2 class="pricing-heading">Transparent Pricing</h2>
+      <p class="pricing-sub">Cash pay &mdash; no insurance required. <em>Simple, upfront costs.</em></p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <p class="pricing-condition">Acne Consultation</p>
+        <p class="pricing-detail">New visit</p>
+        <div class="pricing-price">$100</div>
+      </div>
+      <div class="pricing-card">
+        <p class="pricing-condition">Topical Medication Refill</p>
+        <p class="pricing-detail">1 month supply</p>
+        <div class="pricing-price">$50</div>
+      </div>
+      <div class="pricing-card">
+        <p class="pricing-condition">Melasma &amp; Hyperpigmentation</p>
+        <p class="pricing-detail">Consultation &amp; treatment plan</p>
+        <div class="pricing-price">$150</div>
+      </div>
+      <div class="pricing-card">
+        <p class="pricing-condition">Hair Loss</p>
+        <p class="pricing-detail">New visit</p>
+        <div class="pricing-price">$200</div>
+      </div>
+      <div class="pricing-card">
+        <p class="pricing-condition">Accutane</p>
+        <p class="pricing-detail">Full course, avg. 7 monthly visits</p>
+        <div class="pricing-price">$500</div>
+        <p class="pricing-price-note">per course</p>
+      </div>
+    </div>
+
+    <div class="pricing-notice">
+      <div class="pricing-notice-item">
+        <strong>No Insurance Needed</strong>
+        Currently cash pay only. We plan to partner with insurance providers soon &mdash; check back for updates.
+      </div>
+      <div class="pricing-notice-item">
+        <strong>Schedule Coming Soon</strong>
+        Online booking will be available shortly. In the meantime, reach us at info@fasttrackdermatology.com
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

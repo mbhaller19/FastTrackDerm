@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How It Works — Fast Track Dermatology</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --offwhite:   #F5F2EC;
+      --cream:      #EDE9DF;
+      --sage:       #7E9178;
+      --sage-light: #A8B8A2;
+      --sage-dark:  #4E6349;
+      --gold:       #B8923A;
+      --gold-light: #D4AE6A;
+      --gold-pale:  #F0E8D6;
+      --text-dark:  #2A2A25;
+      --text-mid:   #5A574F;
+    }
+
+    body {
+      background: var(--offwhite);
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+    }
+
+    /* ── HEADER ── */
+    .section-header {
+      text-align: center;
+      padding: 80px 48px 72px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow::before, .eyebrow::after {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--sage-light);
+    }
+
+    .section-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 300;
+      color: var(--text-dark);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .section-heading em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .section-sub {
+      font-size: 14px;
+      color: var(--text-mid);
+      font-weight: 300;
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── STEPS ── */
+    .steps-wrapper {
+      background: var(--cream);
+      border-top: 1px solid rgba(90,87,79,0.1);
+      border-bottom: 1px solid rgba(90,87,79,0.1);
+      padding: 72px 64px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* connector line between steps */
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(33.33% - 10px);
+      right: calc(33.33% - 10px);
+      height: 1px;
+      background: var(--sage-light);
+      z-index: 0;
+    }
+
+    .step {
+      padding: 0 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step:first-child { padding-left: 0; }
+    .step:last-child  { padding-right: 0; }
+
+    .step-marker {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .step-number {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 1px solid var(--sage-light);
+      background: var(--offwhite);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(42,42,37,0.08);
+    }
+
+    .step-number span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--gold);
+    }
+
+    .step-platform {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    .step-platform-name {
+      font-size: 11px;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-top: 1px;
+    }
+
+    .step-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 400;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .step-desc {
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+
+    .step-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      text-decoration: none;
+      font-weight: 400;
+      border-bottom: 1px solid var(--sage-light);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .step-link:hover {
+      color: var(--gold);
+      border-color: var(--gold-light);
+    }
+
+    .step-link svg {
+      width: 10px;
+      height: 10px;
+    }
+
+    /* ── PLATFORM CARDS ── */
+    .platforms-section {
+      padding: 72px 64px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .platforms-label {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      font-weight: 500;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .platforms-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--cream);
+    }
+
+    .platforms-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .platform-card {
+      background: var(--cream);
+      padding: 28px 32px;
+      border: 1px solid rgba(90,87,79,0.08);
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      transition: box-shadow 0.2s;
+    }
+
+    .platform-card:hover {
+      box-shadow: 0 4px 20px rgba(42,42,37,0.08);
+    }
+
+    .platform-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--offwhite);
+      border: 1px solid rgba(90,87,79,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .platform-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .platform-info {
+      flex: 1;
+    }
+
+    .platform-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+      letter-spacing: 0.01em;
+    }
+
+    .platform-use {
+      font-size: 12px;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .platform-btn {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: var(--sage);
+      color: var(--offwhite);
+      padding: 8px 16px;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      transition: background 0.2s;
+    }
+
+    .platform-btn:hover { background: var(--sage-dark); }
+
+    .platform-btn.gold {
+      background: var(--gold);
+    }
+
+    .platform-btn.gold:hover { background: var(--gold-light); }
+
+    /* ── CTA BAND ── */
+    .cta-band {
+      background: var(--sage-dark);
+      padding: 56px 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-band::before {
+      content: '';
+      position: absolute;
+      right: -60px;
+      top: -60px;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .cta-band-text {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-band-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 300;
+      color: var(--offwhite);
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+
+    .cta-band-heading em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .cta-band-sub {
+      font-size: 13px;
+      color: rgba(245,242,236,0.6);
+      font-weight: 300;
+    }
+
+    .cta-band-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-light {
+      background: var(--offwhite);
+      color: var(--sage-dark);
+      padding: 14px 32px;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      text-decoration: none;
+      transition: background 0.2s;
+      display: inline-block;
+    }
+
+    .btn-light:hover { background: var(--cream); }
+
+    .btn-outline {
+      background: transparent;
+      color: rgba(245,242,236,0.8);
+      padding: 14px 32px;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      text-decoration: none;
+      border: 1px solid rgba(245,242,236,0.25);
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(245,242,236,0.5);
+      color: var(--offwhite);
+    }
+
+    @media (max-width: 768px) {
+      .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .steps-grid::before { display: none; }
+      .step { padding: 0; }
+
+      .platforms-grid { grid-template-columns: 1fr; }
+
+      .platforms-section,
+      .cta-band { padding: 48px 24px; }
+
+      .steps-wrapper { padding: 48px 24px; }
+    }
+
+    /* ── SITE NAV ── */
+    .site-nav {
+      background: #F5F2EC;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 52px;
+      border-bottom: 1px solid #EDE9DF;
+      box-shadow: 0 2px 12px rgba(42,42,37,0.07);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: #2A2A25;
+      text-decoration: none;
+    }
+    .site-nav-logo span { color: #B8923A; }
+    .site-nav-links { display: flex; gap: 36px; list-style: none; }
+    .site-nav-links a {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #5A574F;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+    .site-nav-links a:hover { color: #B8923A; }
+    .site-nav-right { display: flex; align-items: center; gap: 16px; }
+    .site-nav-portal {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #5A574F;
+      text-decoration: none;
+      font-weight: 400;
+    }
+    .site-nav-cta {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: #B8923A;
+      color: #F5F2EC;
+      padding: 11px 24px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .site-nav-cta:hover { background: #D4AE6A; }
+    @media (max-width: 768px) {
+      .site-nav { padding: 16px 24px; }
+      .site-nav-links, .site-nav-portal { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="index.html" class="site-nav-logo">Fast Track <span>Dermatology</span></a>
+    <ul class="site-nav-links">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="site-nav-right">
+      <a href="patient-login.html" class="site-nav-portal">Patient Portal</a>
+      <!-- ↓ UPDATE: replace # with your CharmHealth booking URL -->
+      <a href="#" class="site-nav-cta">Book a Visit</a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <div class="section-header">
+    <div class="eyebrow">The Process</div>
+    <h2 class="section-heading">Expert care in <em>three steps</em></h2>
+    <p class="section-sub">From booking to treatment plan — everything happens online, on your schedule.</p>
+  </div>
+
+  <!-- STEPS -->
+  <div class="steps-wrapper">
+    <div class="steps-grid">
+
+      <div class="step">
+        <div class="step-marker">
+          <div class="step-number"><span>01</span></div>
+          <div>
+            <div class="step-platform">Book Online</div>
+            <!-- ↓ UPDATE: replace # with your CharmHealth booking URL -->
+            <div class="step-platform-name">via CharmHealth</div>
+          </div>
+        </div>
+        <h3 class="step-title">Schedule your visit</h3>
+        <p class="step-desc">Choose a time that works for you — including evenings and weekends. New patient and follow-up slots available.</p>
+        <!-- ↓ UPDATE: replace # with your CharmHealth booking URL -->
+        <a href="#" class="step-link">
+          Book now
+          <svg viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H3M9 1V7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="step">
+        <div class="step-marker">
+          <div class="step-number"><span>02</span></div>
+          <div>
+            <div class="step-platform">Video Visit</div>
+            <!-- ↓ UPDATE: replace # with your Doximity link if desired -->
+            <div class="step-platform-name">via Doximity Dialer</div>
+          </div>
+        </div>
+        <h3 class="step-title">Meet Dr. Haller</h3>
+        <p class="step-desc">Connect via secure video — no app download needed. You'll receive a link before your appointment. Patients must reside in California.</p>
+        <!-- ↓ UPDATE: replace # with your Doximity profile/link -->
+        <a href="#" class="step-link">
+          Learn about video visits
+          <svg viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H3M9 1V7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="step">
+        <div class="step-marker">
+          <div class="step-number"><span>03</span></div>
+          <div>
+            <div class="step-platform">Your Plan</div>
+            <div class="step-platform-name">via Patient Portal</div>
+          </div>
+        </div>
+        <h3 class="step-title">Get your treatment plan</h3>
+        <p class="step-desc">Receive your diagnosis, prescriptions, and follow-up instructions directly through your secure patient portal.</p>
+        <!-- ↓ UPDATE: replace # with your CharmHealth patient portal URL -->
+        <a href="#" class="step-link">
+          Go to patient portal
+          <svg viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H3M9 1V7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PLATFORM CARDS -->
+  <div class="platforms-section">
+    <p class="platforms-label">Platforms We Use</p>
+    <div class="platforms-grid">
+
+      <div class="platform-card">
+        <div class="platform-icon">
+          <!-- calendar icon -->
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="3" width="16" height="15" rx="1.5" stroke="#7E9178" stroke-width="1.2"/>
+            <path d="M2 7h16" stroke="#7E9178" stroke-width="1.2"/>
+            <path d="M6 1v4M14 1v4" stroke="#7E9178" stroke-width="1.2" stroke-linecap="round"/>
+            <circle cx="7" cy="12" r="1" fill="#7E9178"/>
+            <circle cx="10" cy="12" r="1" fill="#7E9178"/>
+            <circle cx="13" cy="12" r="1" fill="#7E9178"/>
+          </svg>
+        </div>
+        <div class="platform-info">
+          <p class="platform-name">CharmHealth</p>
+          <p class="platform-use">Scheduling, patient portal, charting, and e-prescribing. Create your free account to book.</p>
+          <!-- ↓ UPDATE: replace # with your CharmHealth patient-facing URL -->
+          <a href="#" class="platform-btn" target="_blank" rel="noopener">Book a Visit</a>
+        </div>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-icon">
+          <!-- video icon -->
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="4" width="13" height="12" rx="1.5" stroke="#7E9178" stroke-width="1.2"/>
+            <path d="M14 8l5-3v10l-5-3V8z" stroke="#7E9178" stroke-width="1.2" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="platform-info">
+          <p class="platform-name">Doximity Dialer</p>
+          <p class="platform-use">Secure, HIPAA-compliant video visits. No app needed — you'll get a link before your appointment.</p>
+          <!-- ↓ UPDATE: replace # with your Doximity telehealth link if you have one -->
+          <a href="#" class="platform-btn gold" target="_blank" rel="noopener">Join a Visit</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div class="cta-band-text">
+      <h3 class="cta-band-heading">Ready to get <em>started?</em></h3>
+      <p class="cta-band-sub">Same-week appointments available for new patients.</p>
+    </div>
+    <div class="cta-band-actions">
+      <!-- ↓ UPDATE: replace # with your CharmHealth booking URL -->
+      <a href="#" class="btn-light">Book a Visit</a>
+      <!-- ↓ UPDATE: replace # with your CharmHealth patient portal URL -->
+      <a href="#" class="btn-outline">Patient Portal</a>
+    </div>
+  </div>
+
+</body>
+</html>
