@@ -79,15 +79,78 @@
     }
 
     /* ── SERVICES GRID ── */
+    .services-subheading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(24px, 2.6vw, 32px);
+      font-weight: 400;
+      color: var(--text-dark);
+      text-align: center;
+      margin: 0 auto 32px;
+      max-width: 1100px;
+    }
+
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1px;
       background: var(--cream);
       border-top: 1px solid var(--cream);
       border-bottom: 1px solid var(--cream);
       max-width: 1100px;
+      margin: 0 auto 24px;
+    }
+
+    .service-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .service-note {
+      font-size: 12px;
+      color: var(--text-mid);
+      font-weight: 300;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .service-includes {
+      list-style: none;
+      font-size: 12px;
+      line-height: 1.85;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+
+    .service-includes li {
+      position: relative;
+      padding-left: 14px;
+    }
+
+    .service-includes li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--sage);
+    }
+
+    .followup-note {
+      text-align: center;
+      font-size: 20px;
+      color: var(--text-dark);
+      font-weight: 400;
       margin: 0 auto 80px;
+      max-width: 1100px;
+    }
+
+    .followup-note strong {
+      color: var(--gold);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      font-weight: 500;
     }
 
     .service-card {
@@ -355,91 +418,69 @@
   </div>
 
   <!-- SERVICES GRID -->
+  <h3 class="services-subheading">✨ Condition-Specific Visits</h3>
   <div class="services-grid">
 
     <div class="service-card">
       <div class="service-number">01</div>
-      <div class="service-icon">
-        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="18" cy="18" r="16" stroke="#A8B8A2" stroke-width="1.2"/>
-          <circle cx="18" cy="18" r="8" stroke="#A8B8A2" stroke-width="1.2" stroke-dasharray="2 3"/>
-          <circle cx="18" cy="18" r="2" fill="#A8B8A2"/>
-        </svg>
-      </div>
-      <h3 class="service-name">Acne</h3>
-      <p class="service-desc">From mild breakouts to cystic acne, including Accutane management with monthly monitoring.</p>
-      <span class="service-tag">New &amp; Follow-up Visits</span>
+      <h3 class="service-name">Acne Consultation</h3>
+      <div class="service-price">$175</div>
+      <ul class="service-includes">
+        <li>Acne assessment</li>
+        <li>Prescription treatment when appropriate &mdash; Accutane (isotretinoin)</li>
+        <li>Skincare regimen</li>
+        <li>OTC product recommendations</li>
+        <li>Follow-up plan</li>
+      </ul>
     </div>
 
     <div class="service-card">
       <div class="service-number">02</div>
-      <div class="service-icon">
-        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6 28 Q10 10 18 8 Q26 10 30 28" stroke="#A8B8A2" stroke-width="1.2" stroke-linecap="round"/>
-          <path d="M10 24 Q14 14 18 12 Q22 14 26 24" stroke="#A8B8A2" stroke-width="1.2" stroke-linecap="round"/>
-          <circle cx="18" cy="26" r="2" fill="#A8B8A2"/>
-        </svg>
-      </div>
-      <h3 class="service-name">Hair Loss</h3>
-      <p class="service-desc">Evaluation and treatment of alopecia, thinning hair, and scalp conditions for all hair types.</p>
-      <span class="service-tag">New &amp; Follow-up Visits</span>
+      <h3 class="service-name">Hair Loss Consultation</h3>
+      <div class="service-price">$175</div>
+      <ul class="service-includes">
+        <li>Pattern hair loss assessment</li>
+        <li>Review of medications, family history, etc.</li>
+        <li>Treatment options</li>
+        <li>Laboratory recommendations when appropriate</li>
+        <li>Prescription treatment when appropriate</li>
+      </ul>
     </div>
 
     <div class="service-card">
       <div class="service-number">03</div>
-      <div class="service-icon">
-        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="6" y="10" width="24" height="18" rx="2" stroke="#A8B8A2" stroke-width="1.2"/>
-          <circle cx="18" cy="19" r="5" stroke="#A8B8A2" stroke-width="1.2" stroke-dasharray="2 2"/>
-          <path d="M14 10 Q18 6 22 10" stroke="#A8B8A2" stroke-width="1.2" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <h3 class="service-name">Pigmentation</h3>
-      <p class="service-desc">Melasma, hyperpigmentation, sun spots, and uneven skin tone — diagnosis and treatment plans.</p>
-      <span class="service-tag">Consultation</span>
+      <h3 class="service-name">Rash Consultation</h3>
+      <div class="service-price">$175</div>
+      <p class="service-note">For non-emergency:</p>
+      <ul class="service-includes">
+        <li>Eczema</li>
+        <li>Contact dermatitis</li>
+        <li>Seborrheic dermatitis</li>
+        <li>Psoriasis</li>
+        <li>Intertrigo</li>
+        <li>Other inflammatory rashes</li>
+      </ul>
     </div>
 
     <div class="service-card">
       <div class="service-number">04</div>
-      <div class="service-icon">
-        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 26 Q10 10 18 8 Q26 10 26 26" stroke="#A8B8A2" stroke-width="1.2" stroke-linecap="round"/>
-          <path d="M14 26 Q14 16 18 14 Q22 16 22 26" stroke="#A8B8A2" stroke-width="1.2" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <h3 class="service-name">Rashes &amp; Eczema</h3>
-      <p class="service-desc">Atopic dermatitis, contact dermatitis, psoriasis, and other inflammatory skin conditions.</p>
-      <span class="service-tag">Diagnosis &amp; Treatment</span>
-    </div>
-
-    <div class="service-card">
-      <div class="service-number">05</div>
-      <div class="service-icon">
-        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8 18 Q12 8 18 8 Q24 8 28 18 Q24 28 18 28 Q12 28 8 18Z" stroke="#A8B8A2" stroke-width="1.2"/>
-          <path d="M13 18 Q15 13 18 13 Q21 13 23 18 Q21 23 18 23 Q15 23 13 18Z" stroke="#A8B8A2" stroke-width="1.2"/>
-        </svg>
-      </div>
-      <h3 class="service-name">Skin Concerns</h3>
-      <p class="service-desc">Rosacea, dry skin, seborrheic dermatitis, and general skin health consultations.</p>
-      <span class="service-tag">General Dermatology</span>
-    </div>
-
-    <div class="service-card">
-      <div class="service-number">06</div>
-      <div class="service-icon">
-        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 28 L12 12 Q12 8 16 8 L20 8 Q24 8 24 12 L24 28" stroke="#A8B8A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M9 28 L27 28" stroke="#A8B8A2" stroke-width="1.2" stroke-linecap="round"/>
-          <path d="M16 16 Q18 14 20 16" stroke="#A8B8A2" stroke-width="1.1" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <h3 class="service-name">Prescription Refills</h3>
-      <p class="service-desc">Topical medication refills and ongoing management for established skin conditions.</p>
-      <span class="service-tag">Follow-up Visits</span>
+      <h3 class="service-name">Pediatric Dermatology</h3>
+      <p class="service-note">Patients under 18 years of age</p>
+      <div class="service-price">$175</div>
+      <ul class="service-includes">
+        <li>Eczema</li>
+        <li>Acne</li>
+        <li>Warts &mdash; prescription medication only</li>
+        <li>Small infantile hemangioma (strawberry hemangioma)</li>
+        <li>Birthmarks</li>
+        <li>Rashes</li>
+        <li>Infantile skin conditions</li>
+      </ul>
     </div>
 
   </div>
+
+  <p class="followup-note">All follow-up visits: <strong>$100</strong></p>
 
   <!-- NOTICE BAND -->
   <div class="notice-band">

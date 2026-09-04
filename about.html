@@ -452,6 +452,266 @@
       margin-bottom: 6px;
     }
 
+    /* ── URGENT CARE CARD ── */
+    .urgent-card {
+      max-width: 960px;
+      margin: 0 auto 64px;
+      background: var(--offwhite);
+      border: 1px solid var(--cream);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .urgent-card-head {
+      padding: 40px 40px 28px;
+      border-bottom: 1px solid var(--cream);
+      text-align: center;
+    }
+
+    .urgent-badge {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      background: var(--gold-pale);
+      padding: 5px 12px;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .urgent-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(26px, 3vw, 34px);
+      font-weight: 400;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .urgent-tagline {
+      font-size: 13px;
+      font-style: italic;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+
+    .urgent-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 44px;
+      font-weight: 400;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .urgent-card-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--cream);
+    }
+
+    .urgent-col {
+      background: var(--offwhite);
+      padding: 32px 40px;
+    }
+
+    .urgent-col-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .urgent-list {
+      list-style: none;
+      font-size: 13px;
+      line-height: 1.9;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+
+    .urgent-list li {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .urgent-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--sage-light);
+    }
+
+    .urgent-list.check li::before {
+      content: '✓';
+      width: auto;
+      height: auto;
+      border-radius: 0;
+      background: none;
+      top: 0;
+      color: var(--gold);
+      font-size: 12px;
+    }
+
+    .urgent-footnote {
+      padding: 20px 40px;
+      font-size: 12px;
+      color: var(--text-mid);
+      font-weight: 300;
+      font-style: italic;
+      border-top: 1px solid var(--cream);
+    }
+
+    /* ── CONDITION-SPECIFIC VISITS ── */
+    .condition-visits-header {
+      text-align: center;
+      margin: 0 auto 32px;
+      max-width: 960px;
+    }
+
+    .condition-visits-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(24px, 2.6vw, 32px);
+      font-weight: 400;
+      color: var(--text-dark);
+    }
+
+    .condition-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-bottom: 24px;
+    }
+
+    .condition-grid .pricing-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pricing-includes {
+      list-style: none;
+      font-size: 12px;
+      line-height: 1.8;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-top: 16px;
+    }
+
+    .pricing-includes li {
+      position: relative;
+      padding-left: 14px;
+    }
+
+    .pricing-includes li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--sage);
+    }
+
+    .followup-note {
+      text-align: center;
+      font-size: 20px;
+      color: var(--text-dark);
+      font-weight: 400;
+      margin: 8px auto 40px;
+      max-width: 960px;
+    }
+
+    .followup-note strong {
+      color: var(--gold);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      font-weight: 500;
+    }
+
+    /* ── CANCELLATION POLICY ── */
+    .policy-section {
+      padding: 80px 64px;
+      background: var(--cream);
+    }
+
+    .policy-grid {
+      max-width: 960px;
+      margin: 0 auto 32px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: rgba(90,87,79,0.12);
+      border: 1px solid rgba(90,87,79,0.12);
+    }
+
+    .policy-block {
+      background: var(--offwhite);
+      padding: 28px 32px;
+    }
+
+    .policy-block h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      font-weight: 500;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+
+    .policy-block p {
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 8px;
+    }
+
+    .policy-block ul {
+      list-style: none;
+    }
+
+    .policy-block li {
+      position: relative;
+      padding-left: 16px;
+      margin-bottom: 6px;
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+
+    .policy-block li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--sage-light);
+    }
+
+    .policy-block strong { color: var(--text-dark); font-weight: 500; }
+
+    .policy-agree {
+      max-width: 960px;
+      margin: 0 auto 12px;
+      font-size: 13px;
+      color: var(--text-mid);
+      font-weight: 300;
+      font-style: italic;
+      text-align: center;
+    }
+
+    .policy-contact {
+      max-width: 960px;
+      margin: 0 auto;
+      font-size: 13px;
+      color: var(--sage-dark);
+      font-weight: 400;
+      text-align: center;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .about-grid {
@@ -467,6 +727,23 @@
 
       .pricing-section {
         padding: 56px 24px;
+      }
+
+      .urgent-card-body {
+        grid-template-columns: 1fr;
+      }
+
+      .urgent-card-head, .urgent-col, .urgent-footnote {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .policy-section {
+        padding: 56px 24px;
+      }
+
+      .policy-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -644,34 +921,107 @@
       <p class="pricing-sub">Cash pay &mdash; no insurance required. <em>Simple, upfront costs.</em></p>
     </div>
 
-    <div class="pricing-grid">
+    <!-- URGENT CARE -->
+    <div class="urgent-card">
+      <div class="urgent-card-head">
+        <span class="urgent-badge">🚨 Urgent Care</span>
+        <h3 class="urgent-title">DERM Same Day / Next Day</h3>
+        <p class="urgent-tagline">"See a dermatologist today or tomorrow&mdash;without insurance."</p>
+        <div class="urgent-price">$175</div>
+      </div>
+      <div class="urgent-card-body">
+        <div class="urgent-col">
+          <p class="urgent-col-label">Good For</p>
+          <ul class="urgent-list">
+            <li>New rashes</li>
+            <li>Eczema flares</li>
+            <li>Acne flares</li>
+            <li>Rosacea</li>
+            <li>Hives</li>
+            <li>Contact dermatitis</li>
+            <li>Medication-related rashes</li>
+            <li>Suspected superficial infections</li>
+            <li>Insect bites</li>
+            <li>Itching</li>
+            <li>Worsening psoriasis</li>
+            <li>New or changing skin concerns that can reasonably be assessed virtually</li>
+          </ul>
+        </div>
+        <div class="urgent-col">
+          <p class="urgent-col-label">Includes</p>
+          <ul class="urgent-list check">
+            <li>Video visit &mdash; 15&ndash;20 minutes</li>
+            <li>Review of patient-submitted photographs</li>
+            <li>Diagnosis/differential diagnosis</li>
+            <li>Prescription when medically appropriate</li>
+            <li>Personalized treatment plan</li>
+            <li>Electronic prescriptions</li>
+            <li>Written after-visit instructions</li>
+            <li>One brief follow-up message within 7 days</li>
+          </ul>
+        </div>
+      </div>
+      <p class="urgent-footnote">Fee does not include: medications, laboratory testing, procedures, biopsies, or in-person services.</p>
+    </div>
+
+    <!-- CONDITION-SPECIFIC VISITS -->
+    <div class="condition-visits-header">
+      <h3 class="condition-visits-heading">✨ Condition-Specific Visits</h3>
+    </div>
+
+    <div class="pricing-grid condition-grid">
       <div class="pricing-card">
         <p class="pricing-condition">Acne Consultation</p>
-        <p class="pricing-detail">New visit</p>
-        <div class="pricing-price">$100</div>
+        <div class="pricing-price">$175</div>
+        <ul class="pricing-includes">
+          <li>Acne assessment</li>
+          <li>Prescription treatment when appropriate &mdash; Accutane (isotretinoin)</li>
+          <li>Skincare regimen</li>
+          <li>OTC product recommendations</li>
+          <li>Follow-up plan</li>
+        </ul>
       </div>
       <div class="pricing-card">
-        <p class="pricing-condition">Topical Medication Refill</p>
-        <p class="pricing-detail">1 month supply</p>
-        <div class="pricing-price">$50</div>
+        <p class="pricing-condition">Hair Loss Consultation</p>
+        <div class="pricing-price">$175</div>
+        <ul class="pricing-includes">
+          <li>Pattern hair loss assessment</li>
+          <li>Review of medications, family history, etc.</li>
+          <li>Treatment options</li>
+          <li>Laboratory recommendations when appropriate</li>
+          <li>Prescription treatment when appropriate</li>
+        </ul>
       </div>
       <div class="pricing-card">
-        <p class="pricing-condition">Melasma &amp; Hyperpigmentation</p>
-        <p class="pricing-detail">Consultation &amp; treatment plan</p>
-        <div class="pricing-price">$150</div>
+        <p class="pricing-condition">Rash Consultation</p>
+        <div class="pricing-price">$175</div>
+        <p class="pricing-detail">For non-emergency:</p>
+        <ul class="pricing-includes">
+          <li>Eczema</li>
+          <li>Contact dermatitis</li>
+          <li>Seborrheic dermatitis</li>
+          <li>Psoriasis</li>
+          <li>Intertrigo</li>
+          <li>Other inflammatory rashes</li>
+        </ul>
       </div>
       <div class="pricing-card">
-        <p class="pricing-condition">Hair Loss</p>
-        <p class="pricing-detail">New visit</p>
-        <div class="pricing-price">$200</div>
-      </div>
-      <div class="pricing-card">
-        <p class="pricing-condition">Accutane</p>
-        <p class="pricing-detail">Full course, avg. 7 monthly visits</p>
-        <div class="pricing-price">$500</div>
-        <p class="pricing-price-note">per course</p>
+        <p class="pricing-condition">Pediatric Dermatology</p>
+        <p class="pricing-detail">Patients under 18 years of age</p>
+        <div class="pricing-price">$175</div>
+        <ul class="pricing-includes">
+          <li>Eczema</li>
+          <li>Acne</li>
+          <li>Warts &mdash; prescription medication only</li>
+          <li>Small infantile hemangioma (strawberry hemangioma)</li>
+          <li>Birthmarks</li>
+          <li>Rashes</li>
+          <li>Infantile skin conditions</li>
+        </ul>
       </div>
     </div>
+
+    <p class="followup-note">All follow-up visits: <strong>$100</strong></p>
 
     <div class="pricing-notice">
       <div class="pricing-notice-item">
@@ -684,6 +1034,41 @@
       </div>
     </div>
 
+  </div>
+
+  <!-- CANCELLATION & RESCHEDULING POLICY -->
+  <div class="policy-section">
+    <div class="pricing-header">
+      <h2 class="pricing-heading">Cancellation &amp; Rescheduling Policy</h2>
+      <p class="pricing-sub">We understand that plans can change. We ask that you provide at least 24 hours&rsquo; notice if you need to cancel or reschedule your appointment.</p>
+    </div>
+
+    <div class="policy-grid">
+      <div class="policy-block">
+        <h3>Cancellations &amp; Rescheduling</h3>
+        <ul>
+          <li>Cancellations or rescheduling requests made 24 hours or more before your appointment: <strong>No fee.</strong></li>
+          <li>Cancellations made less than 24 hours before your appointment: A <strong>$75 late-cancellation fee</strong> may be charged.</li>
+          <li>No-shows: A <strong>$100 no-show fee</strong> may be charged.</li>
+          <li>If you arrive more than 10 minutes late to a telehealth appointment, your appointment may need to be rescheduled and may be considered a late cancellation/no-show.</li>
+        </ul>
+      </div>
+      <div class="policy-block">
+        <h3>Urgent Appointments</h3>
+        <p>Because urgent appointments reserve dedicated same-day or next-day availability, urgent appointments canceled less than 24 hours before the appointment or missed without notice may be subject to the full <strong>$175 visit fee</strong>.</p>
+      </div>
+      <div class="policy-block">
+        <h3>Emergencies</h3>
+        <p>We understand that unexpected emergencies happen. Late-cancellation and no-show fees may be waived at the practice&rsquo;s discretion for documented emergencies or other extenuating circumstances.</p>
+      </div>
+      <div class="policy-block">
+        <h3>Refunds</h3>
+        <p>Payments for completed visits are non-refundable. If a visit cannot be completed because the medical concern requires an in-person evaluation, the physician will discuss appropriate next steps with you.</p>
+      </div>
+    </div>
+
+    <p class="policy-agree">By scheduling an appointment, you acknowledge and agree to this cancellation and no-show policy.</p>
+    <p class="policy-contact">Need to cancel? Text/email us as soon as possible&mdash;we&rsquo;re happy to help reschedule. <a href="cancellation-policy.html" target="_blank" rel="noopener" style="color:var(--sage-dark); font-weight:500;">View full policy &amp; contact info &rarr;</a></p>
   </div>
 
 </body>
