@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fast Track Dermatology</title>
+  <title>FastTrack Dermatology</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after {
@@ -143,53 +143,6 @@
     .nav-cta:hover {
       background: var(--gold-light);
       box-shadow: 0 4px 20px rgba(184,146,58,0.35);
-    }
-
-    /* ── TRUST BAR ── */
-    .trust-bar {
-      background: var(--offwhite);
-      border-bottom: 1px solid var(--cream);
-      display: flex;
-      justify-content: center;
-      gap: 0;
-      padding: 0 48px;
-      flex-wrap: wrap;
-    }
-
-    .trust-item {
-      text-align: center;
-      padding: 32px 48px;
-      position: relative;
-      flex: 1;
-      max-width: 200px;
-    }
-
-    .trust-item:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      height: 32px;
-      width: 1px;
-      background: var(--cream);
-    }
-
-    .trust-number {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 32px;
-      font-weight: 400;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-
-    .trust-label {
-      font-size: 10px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      font-weight: 400;
     }
 
     /* ── URGENT CARE SECTION ── */
@@ -406,17 +359,142 @@
       border-color: var(--gold-light);
     }
 
+    /* ── NEW CLIENT POPUP (corner toast) ── */
+    .promo-overlay {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 1000;
+      pointer-events: none;
+    }
+
+    .promo-card {
+      position: relative;
+      background: var(--offwhite);
+      max-width: 320px;
+      width: 100%;
+      padding: 36px 28px 28px;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--cream);
+      opacity: 0;
+      transform: translateY(16px) scale(0.98);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      pointer-events: none;
+    }
+
+    .promo-overlay.is-visible .promo-card {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    .promo-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 28px;
+      height: 28px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: var(--text-mid);
+      font-size: 18px;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+
+    .promo-close:hover { color: var(--gold); }
+
+    .promo-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+
+    .promo-eyebrow::before, .promo-eyebrow::after {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--sage-light);
+    }
+
+    .promo-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 400;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .promo-price span {
+      font-size: 18px;
+      vertical-align: super;
+      margin-right: 2px;
+    }
+
+    .promo-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-dark);
+      margin-bottom: 14px;
+    }
+
+    .promo-detail {
+      font-size: 12px;
+      color: var(--text-mid);
+      font-weight: 300;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .promo-btn {
+      display: inline-block;
+      background: var(--sage);
+      color: var(--offwhite);
+      padding: 12px 28px;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      text-decoration: none;
+      transition: background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 18px rgba(78,99,73,0.22);
+      margin-bottom: 12px;
+    }
+
+    .promo-btn:hover {
+      background: var(--sage-dark);
+      box-shadow: 0 6px 24px rgba(78,99,73,0.32);
+    }
+
+    .promo-fine {
+      font-size: 10px;
+      color: var(--text-mid);
+      font-weight: 300;
+      opacity: 0.75;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav { padding: 16px 24px; }
       .nav-links, .nav-online-badge { display: none; }
 
-      .trust-bar { padding: 0 16px; }
-      .trust-item { padding: 24px 20px; max-width: none; }
-
       .urgent-section { padding: 56px 24px; }
       .urgent-card-body { grid-template-columns: 1fr; }
       .urgent-card-head, .urgent-col, .urgent-footnote { padding-left: 24px; padding-right: 24px; }
+
+      .promo-overlay { bottom: 16px; right: 16px; left: 16px; }
+      .promo-card { max-width: none; padding: 28px 24px 24px; }
     }
   </style>
 </head>
@@ -429,7 +507,7 @@
 
   <!-- NAV -->
   <nav>
-    <a href="#" class="nav-logo">Fast Track <span>Dermatology</span></a>
+    <a href="#" class="nav-logo">FastTrack <span>Dermatology</span></a>
     <ul class="nav-links">
       <li><a href="services.html">Services</a></li>
       <li><a href="how-it-works.html">How It Works</a></li>
@@ -439,7 +517,7 @@
     </ul>
     <div class="nav-right">
       <span class="nav-online-badge">Online Clinic</span>
-      <!-- ↓ UPDATE: replace # with your CharmHealth booking URL -->
+      <!-- ↓ UPDATE: replace # with your Athena Health booking URL -->
       <a href="#" class="nav-cta">Book a Visit</a>
     </div>
   </nav>
@@ -448,15 +526,15 @@
   <div class="urgent-section">
     <div class="section-header">
       <div class="eyebrow">Urgent Care</div>
-      <h2 class="section-heading">See a Dermatologist <em>Today</em><br>or Tomorrow</h2>
+      <h2 class="section-heading">See a Dermatologist <em>Today</em></h2>
       <p class="section-sub">Same-day and next-day dermatology visits, cash pay &mdash; no insurance required.</p>
     </div>
 
     <div class="urgent-card">
       <div class="urgent-card-head">
         <span class="urgent-badge">Urgent Care</span>
-        <h3 class="urgent-title">DERM Same Day / Next Day</h3>
-        <p class="urgent-tagline">"See a dermatologist today or tomorrow&mdash;without insurance."</p>
+        <h3 class="urgent-title">DERM Same Day</h3>
+        <p class="urgent-tagline">"See a dermatologist today&mdash;without insurance."</p>
         <div class="urgent-price">$175</div>
       </div>
       <div class="urgent-card-body">
@@ -475,13 +553,13 @@
             <li>Itching</li>
             <li>Worsening psoriasis</li>
             <li>New or changing skin concerns that can reasonably be assessed virtually</li>
+            <li>Topical Rx refills</li>
           </ul>
         </div>
         <div class="urgent-col">
           <p class="urgent-col-label">Includes</p>
           <ul class="urgent-list check">
             <li>Video visit &mdash; 15&ndash;20 minutes</li>
-            <li>Review of patient-submitted photographs</li>
             <li>Diagnosis/differential diagnosis</li>
             <li>Prescription when medically appropriate</li>
             <li>Personalized treatment plan</li>
@@ -491,35 +569,46 @@
           </ul>
         </div>
       </div>
-      <p class="urgent-footnote">Fee does not include: medications, laboratory testing, procedures, biopsies, or in-person services.</p>
+      <p class="urgent-footnote">Fee does not include other costs outside of telemedicine.</p>
     </div>
 
     <div class="urgent-cta">
-      <!-- ↓ UPDATE: replace # with your CharmHealth booking URL -->
+      <!-- ↓ UPDATE: replace # with your Athena Health booking URL -->
       <a href="#" class="hero-book-btn">Book Now &mdash; $175</a>
       <a href="pricing.html">View Full Pricing &amp; Policies &rarr;</a>
     </div>
   </div>
 
-  <!-- TRUST BAR -->
-  <div class="trust-bar">
-    <div class="trust-item">
-      <div class="trust-number">48h</div>
-      <div class="trust-label">Avg. Appointment Wait</div>
-    </div>
-    <div class="trust-item">
-      <div class="trust-number">15+</div>
-      <div class="trust-label">Years Experience</div>
-    </div>
-    <div class="trust-item">
-      <div class="trust-number">5,000+</div>
-      <div class="trust-label">Patients Treated</div>
-    </div>
-    <div class="trust-item">
-      <div class="trust-number">100%</div>
-      <div class="trust-label">Board Certified</div>
+  <!-- NEW CLIENT SPECIAL POPUP -->
+  <div class="promo-overlay" id="promoOverlay">
+    <div class="promo-card">
+      <button class="promo-close" id="promoClose" aria-label="Close">&times;</button>
+      <p class="promo-eyebrow">New Client Special</p>
+      <div class="promo-price"><span>$</span>99</div>
+      <p class="promo-subtitle">First Visit</p>
+      <p class="promo-detail">Out-of-pocket only &mdash; no insurance needed. Payments securely processed via Square.</p>
+      <!-- ↓ UPDATE: replace # with your Athena Health booking URL -->
+      <a href="#" class="promo-btn">Claim This Offer</a>
+      <p class="promo-fine">New patients only. Cannot be combined with other offers.</p>
     </div>
   </div>
+
+  <script>
+    (function () {
+      var overlay = document.getElementById('promoOverlay');
+      var closeBtn = document.getElementById('promoClose');
+
+      setTimeout(function () {
+        overlay.classList.add('is-visible');
+      }, 900);
+
+      function dismiss() {
+        overlay.classList.remove('is-visible');
+      }
+
+      closeBtn.addEventListener('click', dismiss);
+    })();
+  </script>
 
 </body>
 </html>

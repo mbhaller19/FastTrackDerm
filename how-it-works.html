@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How It Works — Fast Track Dermatology</title>
+  <title>How It Works — FastTrack Dermatology</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -227,7 +227,8 @@
 
     .platforms-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
+      max-width: 480px;
       gap: 16px;
     }
 
@@ -477,7 +478,7 @@
 <body>
 
   <nav class="site-nav">
-    <a href="index.html" class="site-nav-logo">Fast Track <span>Dermatology</span></a>
+    <a href="index.html" class="site-nav-logo">FastTrack <span>Dermatology</span></a>
     <ul class="site-nav-links">
       <li><a href="services.html">Services</a></li>
       <li><a href="how-it-works.html">How It Works</a></li>
@@ -487,7 +488,7 @@
     </ul>
     <div class="site-nav-right">
       <a href="patient-login.html" class="site-nav-portal">Patient Portal</a>
-      <!-- ↓ UPDATE: replace # with your CharmHealth booking URL -->
+      <!-- ↓ UPDATE: replace # with your Athena Health booking URL -->
       <a href="#" class="site-nav-cta">Book a Visit</a>
     </div>
   </nav>
@@ -508,13 +509,11 @@
           <div class="step-number"><span>01</span></div>
           <div>
             <div class="step-platform">Book Online</div>
-            <!-- ↓ UPDATE: replace # with your CharmHealth booking URL -->
-            <div class="step-platform-name">via CharmHealth</div>
           </div>
         </div>
         <h3 class="step-title">Schedule your visit</h3>
         <p class="step-desc">Choose a time that works for you — including evenings and weekends. New patient and follow-up slots available.</p>
-        <!-- ↓ UPDATE: replace # with your CharmHealth booking URL -->
+        <!-- ↓ UPDATE: replace # with your Athena Health booking URL -->
         <a href="#" class="step-link">
           Book now
           <svg viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H3M9 1V7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -526,14 +525,12 @@
           <div class="step-number"><span>02</span></div>
           <div>
             <div class="step-platform">Video Visit</div>
-            <!-- ↓ UPDATE: replace # with your Doximity link if desired -->
-            <div class="step-platform-name">via Doximity Dialer</div>
           </div>
         </div>
-        <h3 class="step-title">Meet Dr. Haller</h3>
+        <h3 class="step-title">Meet your derm</h3>
         <p class="step-desc">Connect via secure video — no app download needed. You'll receive a link before your appointment. Patients must reside in California.</p>
-        <!-- ↓ UPDATE: replace # with your Doximity profile/link -->
-        <a href="#" class="step-link">
+        <!-- ↓ UPDATE: replace # with your Athena Health video visit link -->
+        <a href="#" class="step-link" style="border-bottom: none;">
           Learn about video visits
           <svg viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H3M9 1V7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
@@ -549,7 +546,7 @@
         </div>
         <h3 class="step-title">Get your treatment plan</h3>
         <p class="step-desc">Receive your diagnosis, prescriptions, and follow-up instructions directly through your secure patient portal.</p>
-        <!-- ↓ UPDATE: replace # with your CharmHealth patient portal URL -->
+        <!-- ↓ UPDATE: replace # with your Athena Health patient portal URL -->
         <a href="#" class="step-link">
           Go to patient portal
           <svg viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H3M9 1V7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -577,26 +574,10 @@
           </svg>
         </div>
         <div class="platform-info">
-          <p class="platform-name">CharmHealth</p>
+          <p class="platform-name">Athena Health</p>
           <p class="platform-use">Scheduling, patient portal, charting, and e-prescribing. Create your free account to book.</p>
-          <!-- ↓ UPDATE: replace # with your CharmHealth patient-facing URL -->
+          <!-- ↓ UPDATE: replace # with your Athena Health patient-facing URL -->
           <a href="#" class="platform-btn" target="_blank" rel="noopener">Book a Visit</a>
-        </div>
-      </div>
-
-      <div class="platform-card">
-        <div class="platform-icon">
-          <!-- video icon -->
-          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="1" y="4" width="13" height="12" rx="1.5" stroke="#7E9178" stroke-width="1.2"/>
-            <path d="M14 8l5-3v10l-5-3V8z" stroke="#7E9178" stroke-width="1.2" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="platform-info">
-          <p class="platform-name">Doximity Dialer</p>
-          <p class="platform-use">Secure, HIPAA-compliant video visits. No app needed — you'll get a link before your appointment.</p>
-          <!-- ↓ UPDATE: replace # with your Doximity telehealth link if you have one -->
-          <a href="#" class="platform-btn gold" target="_blank" rel="noopener">Join a Visit</a>
         </div>
       </div>
 
@@ -610,9 +591,9 @@
       <p class="cta-band-sub">Same-week appointments available for new patients.</p>
     </div>
     <div class="cta-band-actions">
-      <!-- ↓ UPDATE: replace # with your CharmHealth booking URL -->
+      <!-- ↓ UPDATE: replace # with your Athena Health booking URL -->
       <a href="#" class="btn-light">Book a Visit</a>
-      <!-- ↓ UPDATE: replace # with your CharmHealth patient portal URL -->
+      <!-- ↓ UPDATE: replace # with your Athena Health patient portal URL -->
       <a href="#" class="btn-outline">Patient Portal</a>
     </div>
   </div>
