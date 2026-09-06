@@ -145,299 +145,6 @@
       box-shadow: 0 4px 20px rgba(184,146,58,0.35);
     }
 
-    /* ── HERO WRAPPER ── */
-    .hero-wrapper {
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 580px;
-      background: var(--cream);
-    }
-
-    .hero-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 80px 64px 80px 64px;
-      position: relative;
-      z-index: 2;
-      background: var(--cream);
-      box-shadow: 4px 0 24px rgba(42,42,37,0.06);
-    }
-
-    .hero-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--sage);
-      font-weight: 500;
-      margin-bottom: 22px;
-    }
-
-    .hero-eyebrow::before {
-      content: '';
-      display: block;
-      width: 28px;
-      height: 1px;
-      background: var(--sage);
-    }
-
-    .hero-heading {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(44px, 4.5vw, 66px);
-      font-weight: 300;
-      line-height: 1.08;
-      color: var(--text-dark);
-      margin-bottom: 28px;
-    }
-
-    .hero-heading em {
-      font-style: italic;
-      color: var(--gold);
-    }
-
-    .hero-sub {
-      font-size: 14.5px;
-      line-height: 1.75;
-      color: var(--text-mid);
-      font-weight: 300;
-      max-width: 360px;
-      margin-bottom: 44px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 18px;
-      align-items: center;
-      flex-wrap: wrap;
-      margin-bottom: 48px;
-    }
-
-    .btn-primary {
-      background: var(--sage);
-      color: var(--offwhite);
-      padding: 15px 34px;
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      font-family: 'Inter', sans-serif;
-      font-weight: 400;
-      text-decoration: none;
-      transition: background 0.2s, box-shadow 0.2s;
-      display: inline-block;
-      box-shadow: 0 4px 18px rgba(78,99,73,0.22);
-    }
-
-    .btn-primary:hover {
-      background: var(--sage-dark);
-      box-shadow: 0 6px 24px rgba(78,99,73,0.32);
-    }
-
-    .btn-secondary {
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      text-decoration: none;
-      border-bottom: 1px solid var(--gold-light);
-      padding-bottom: 2px;
-      transition: color 0.2s, border-color 0.2s;
-    }
-
-    .btn-secondary:hover {
-      color: var(--gold);
-      border-color: var(--gold);
-    }
-
-    /* ── HOW IT WORKS MINI ── */
-    .how-it-works-mini {
-      display: flex;
-      gap: 0;
-      border-top: 1px solid rgba(90,87,79,0.12);
-      padding-top: 32px;
-    }
-
-    .how-step {
-      flex: 1;
-      padding-right: 24px;
-    }
-
-    .how-step:not(:last-child) {
-      border-right: 1px solid rgba(90,87,79,0.1);
-      margin-right: 24px;
-    }
-
-    .how-step-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 28px;
-      font-weight: 300;
-      color: var(--gold-light);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-
-    .how-step-label {
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      font-weight: 400;
-      line-height: 1.4;
-    }
-
-    /* ── HERO IMAGE PANEL ── */
-    .hero-image {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-image-inner {
-      width: 100%;
-      height: 100%;
-      min-height: 580px;
-      background:
-        linear-gradient(160deg, #6B7F66 0%, #4E6349 55%, #3A4E36 100%);
-      display: flex;
-      align-items: flex-end;
-      padding: 40px;
-      position: relative;
-    }
-
-    /* Subtle texture overlay */
-    .hero-image-inner::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        repeating-linear-gradient(
-          -45deg,
-          transparent,
-          transparent 60px,
-          rgba(255,255,255,0.025) 60px,
-          rgba(255,255,255,0.025) 61px
-        );
-    }
-
-    /* Large decorative circle */
-    .hero-image-inner::after {
-      content: '';
-      position: absolute;
-      top: -80px;
-      right: -80px;
-      width: 360px;
-      height: 360px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    /* ── FLOATING AVAILABILITY CARD ── */
-    .avail-card {
-      position: absolute;
-      bottom: 48px;
-      left: -28px;
-      background: var(--offwhite);
-      padding: 18px 22px;
-      box-shadow: var(--shadow-lg);
-      min-width: 200px;
-      z-index: 4;
-    }
-
-    .avail-card-label {
-      font-size: 10px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      margin-bottom: 6px;
-    }
-
-    .avail-card-time {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      font-weight: 400;
-      color: var(--text-dark);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-
-    .avail-card-sub {
-      font-size: 11px;
-      color: var(--sage);
-      font-weight: 400;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .avail-card-sub::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--sage);
-      display: inline-block;
-    }
-
-    /* ── VIRTUAL BADGE ── */
-    .virtual-badge {
-      position: absolute;
-      top: 36px;
-      right: 36px;
-      background: rgba(245,242,236,0.12);
-      border: 1px solid rgba(245,242,236,0.22);
-      backdrop-filter: blur(8px);
-      padding: 10px 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      z-index: 4;
-    }
-
-    .virtual-badge-icon {
-      width: 18px;
-      height: 13px;
-      border: 1.5px solid rgba(245,242,236,0.7);
-      border-radius: 2px;
-      position: relative;
-      flex-shrink: 0;
-    }
-
-    .virtual-badge-icon::after {
-      content: '';
-      position: absolute;
-      right: -7px;
-      top: 50%;
-      transform: translateY(-50%);
-      border-top: 5px solid transparent;
-      border-bottom: 5px solid transparent;
-      border-left: 7px solid rgba(245,242,236,0.7);
-    }
-
-    .virtual-badge-text {
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(245,242,236,0.85);
-      font-weight: 400;
-    }
-
-    .hero-image-caption {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 12px;
-      font-style: italic;
-      color: rgba(245,242,236,0.4);
-      letter-spacing: 0.06em;
-      position: relative;
-      z-index: 2;
-    }
-
     /* ── TRUST BAR ── */
     .trust-bar {
       background: var(--offwhite);
@@ -485,19 +192,231 @@
       font-weight: 400;
     }
 
+    /* ── URGENT CARE SECTION ── */
+    .urgent-section {
+      padding: 80px 64px;
+      background: var(--offwhite);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow::before, .eyebrow::after {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--sage-light);
+    }
+
+    .section-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 3.5vw, 46px);
+      font-weight: 300;
+      color: var(--text-dark);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .section-heading em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .section-sub {
+      font-size: 14px;
+      color: var(--text-mid);
+      font-weight: 300;
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .urgent-card {
+      max-width: 960px;
+      margin: 0 auto 32px;
+      background: var(--offwhite);
+      border: 1px solid var(--cream);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .urgent-card-head {
+      padding: 40px 40px 28px;
+      border-bottom: 1px solid var(--cream);
+      text-align: center;
+    }
+
+    .urgent-badge {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      background: var(--gold-pale);
+      padding: 5px 12px;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .urgent-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(26px, 3vw, 34px);
+      font-weight: 400;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .urgent-tagline {
+      font-size: 13px;
+      font-style: italic;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+
+    .urgent-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 44px;
+      font-weight: 400;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .urgent-card-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--cream);
+    }
+
+    .urgent-col {
+      background: var(--offwhite);
+      padding: 32px 40px;
+    }
+
+    .urgent-col-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .urgent-list {
+      list-style: none;
+      font-size: 13px;
+      line-height: 1.9;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+
+    .urgent-list li {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .urgent-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--sage-light);
+    }
+
+    .urgent-list.check li::before {
+      content: '✓';
+      width: auto;
+      height: auto;
+      border-radius: 0;
+      background: none;
+      top: 0;
+      color: var(--gold);
+      font-size: 12px;
+    }
+
+    .urgent-footnote {
+      padding: 20px 40px;
+      font-size: 12px;
+      color: var(--text-mid);
+      font-weight: 300;
+      font-style: italic;
+      border-top: 1px solid var(--cream);
+    }
+
+    .urgent-cta {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .hero-book-btn {
+      background: var(--sage);
+      color: var(--offwhite);
+      padding: 15px 34px;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 18px rgba(78,99,73,0.22);
+    }
+
+    .hero-book-btn:hover {
+      background: var(--sage-dark);
+      box-shadow: 0 6px 24px rgba(78,99,73,0.32);
+    }
+
+    .urgent-cta a:not(.hero-book-btn) {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      text-decoration: none;
+      border-bottom: 1px solid var(--sage-light);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .urgent-cta a:not(.hero-book-btn):hover {
+      color: var(--gold);
+      border-color: var(--gold-light);
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav { padding: 16px 24px; }
       .nav-links, .nav-online-badge { display: none; }
 
-      .hero { grid-template-columns: 1fr; }
-      .hero-text { padding: 48px 28px; box-shadow: none; }
-      .hero-image-inner { min-height: 280px; }
-
-      .avail-card { left: 20px; bottom: 20px; }
-
       .trust-bar { padding: 0 16px; }
       .trust-item { padding: 24px 20px; max-width: none; }
+
+      .urgent-section { padding: 56px 24px; }
+      .urgent-card-body { grid-template-columns: 1fr; }
+      .urgent-card-head, .urgent-col, .urgent-footnote { padding-left: 24px; padding-right: 24px; }
     }
   </style>
 </head>
@@ -514,6 +433,7 @@
     <ul class="nav-links">
       <li><a href="services.html">Services</a></li>
       <li><a href="how-it-works.html">How It Works</a></li>
+      <li><a href="pricing.html">Pricing &amp; Policy</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -524,62 +444,61 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <div class="hero-wrapper">
-    <section class="hero">
+  <!-- URGENT CARE (HERO) -->
+  <div class="urgent-section">
+    <div class="section-header">
+      <div class="eyebrow">Urgent Care</div>
+      <h2 class="section-heading">See a Dermatologist <em>Today</em><br>or Tomorrow</h2>
+      <p class="section-sub">Same-day and next-day dermatology visits, cash pay &mdash; no insurance required.</p>
+    </div>
 
-      <!-- TEXT SIDE -->
-      <div class="hero-text">
-        <p class="hero-eyebrow">Board-Certified &middot; 100% Online</p>
-        <h1 class="hero-heading">
-          Expert skin care,<br>from <em>wherever<br>you are.</em>
-        </h1>
-        <p class="hero-sub">
-          See a board-certified dermatologist without leaving home. Fast Track connects you to real clinical expertise in days, not months.
-        </p>
-        <div class="hero-actions">
-          <!-- ↓ UPDATE: replace # with your CharmHealth booking URL -->
-          <a href="#" class="btn-primary">Book a Virtual Visit</a>
-          <a href="how-it-works.html" class="btn-secondary">How It Works</a>
+    <div class="urgent-card">
+      <div class="urgent-card-head">
+        <span class="urgent-badge">Urgent Care</span>
+        <h3 class="urgent-title">DERM Same Day / Next Day</h3>
+        <p class="urgent-tagline">"See a dermatologist today or tomorrow&mdash;without insurance."</p>
+        <div class="urgent-price">$175</div>
+      </div>
+      <div class="urgent-card-body">
+        <div class="urgent-col">
+          <p class="urgent-col-label">Good For</p>
+          <ul class="urgent-list">
+            <li>New rashes</li>
+            <li>Eczema flares</li>
+            <li>Acne flares</li>
+            <li>Rosacea</li>
+            <li>Hives</li>
+            <li>Contact dermatitis</li>
+            <li>Medication-related rashes</li>
+            <li>Suspected superficial infections</li>
+            <li>Insect bites</li>
+            <li>Itching</li>
+            <li>Worsening psoriasis</li>
+            <li>New or changing skin concerns that can reasonably be assessed virtually</li>
+          </ul>
         </div>
-
-        <!-- MINI HOW IT WORKS -->
-        <div class="how-it-works-mini">
-          <div class="how-step">
-            <div class="how-step-num">01</div>
-            <div class="how-step-label">Book online<br>in minutes</div>
-          </div>
-          <div class="how-step">
-            <div class="how-step-num">02</div>
-            <div class="how-step-label">Meet your<br>dermatologist</div>
-          </div>
-          <div class="how-step">
-            <div class="how-step-num">03</div>
-            <div class="how-step-label">Get your<br>treatment plan</div>
-          </div>
+        <div class="urgent-col">
+          <p class="urgent-col-label">Includes</p>
+          <ul class="urgent-list check">
+            <li>Video visit &mdash; 15&ndash;20 minutes</li>
+            <li>Review of patient-submitted photographs</li>
+            <li>Diagnosis/differential diagnosis</li>
+            <li>Prescription when medically appropriate</li>
+            <li>Personalized treatment plan</li>
+            <li>Electronic prescriptions</li>
+            <li>Written after-visit instructions</li>
+            <li>One brief follow-up message within 7 days</li>
+          </ul>
         </div>
       </div>
+      <p class="urgent-footnote">Fee does not include: medications, laboratory testing, procedures, biopsies, or in-person services.</p>
+    </div>
 
-      <!-- IMAGE SIDE -->
-      <div class="hero-image">
-        <div class="hero-image-inner">
-          <!-- Virtual visit badge -->
-          <div class="virtual-badge">
-            <div class="virtual-badge-icon"></div>
-            <span class="virtual-badge-text">Virtual Visit</span>
-          </div>
-          <span class="hero-image-caption">Replace with your photo</span>
-        </div>
-
-        <!-- Floating availability card -->
-        <div class="avail-card">
-          <div class="avail-card-label">Next Available</div>
-          <div class="avail-card-time">Today, 3:00 PM</div>
-          <div class="avail-card-sub">Accepting new patients</div>
-        </div>
-      </div>
-
-    </section>
+    <div class="urgent-cta">
+      <!-- ↓ UPDATE: replace # with your CharmHealth booking URL -->
+      <a href="#" class="hero-book-btn">Book Now &mdash; $175</a>
+      <a href="pricing.html">View Full Pricing &amp; Policies &rarr;</a>
+    </div>
   </div>
 
   <!-- TRUST BAR -->
